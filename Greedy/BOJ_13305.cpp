@@ -12,12 +12,12 @@ int main() {
 	FOR(i, N - 1) cin >> road[i];
 	FOR(i, N) cin >> price[i];
 
-	now_price = price[0];
+	now_price = price[0]; // 맨 처음 지점에서는 무조건 주유하고 시작
 
 	FOR(i, N-1) {			
 		cost += now_price * road[i];
 
-		if (now_price > price[i+1])
+		if (now_price > price[i+1])  // 다음에 경유할 곳의 유가가 더 싼 경우, now_price를 갱신
 			now_price = price[i+1];
 	}
 
